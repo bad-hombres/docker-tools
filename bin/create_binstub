@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+if [[ "$1" == "" || "$2" == "" ]]; then
+  read -r -d '' USAGE <<HELP
+Usage: create_binstub IMAGE_NAME "DOCKER_CMD_OPTIONS" [BIN_NAME]
+
+          IMAGE_NAME: dockerhub image name to download
+  DOCKER_CMD_OPTIONS: options to pass to the docker run command
+            BIN_NAME: name of binary to create (defaults to basename of the
+                      docker image
+HELP
+  echo "$USAGE"
+  exit 1
+fi
+
+SCRIPT_DIR=$(readlink -f $(dirname $0))/
+SCRIPT_NAME=${3-$(basename $1)}
+
+
+read -r -d '' SCRIPT <<EOF
+#!/usr/bin/env bash
+IMAGE_NAME=$1
+OPTS=\${OPTS-"$2"}
+
+LIB_DIR=\$(readlink -f \$(dirname \$0))/../lib
+. \$LIB_DIR/functions.sh
+. \$LIB_DIR/base_script.sh
+EOF
+
+echo "$SCRIPT" > $SCRIPT_DIR/$SCRIPT_NAME
+chmod +x $SCRIPT_DIR/$SCRIPT_NAME
