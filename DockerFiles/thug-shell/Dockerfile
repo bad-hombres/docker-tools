@@ -1,4 +1,5 @@
 FROM python:2
+MAINTAINER xirax "bad-hombres"
 
 WORKDIR /usr/src/
 
