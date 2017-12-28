@@ -13,6 +13,7 @@ RUN apt-get install -y unzip
 RUN curl -L https://github.com/danielmiessler/SecLists/archive/master.zip > seclists.zip
 RUN unzip seclists.zip 
 RUN cp -r SecLists-master/ seclists/ && rm seclists.zip
+VOLUME /usr/share/seclists
 
 WORKDIR /root/work
 RUN git clone https://github.com/dzonerzy/goWAPT.git
@@ -21,4 +22,5 @@ RUN git clone https://github.com/dzonerzy/goWAPT.git
 WORKDIR /root/work/goWAPT/
 RUN make && make install
 
-WORKDIR /
+COPY entrypoint.sh .
+ENTRYPOINT ["./entrypoint.sh"]
