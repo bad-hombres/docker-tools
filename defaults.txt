@@ -1,1 +1,2 @@
 remnux/jsdetox|-d -p 3000:3000
+hombres/thug-shell|--rm -ti --net host
