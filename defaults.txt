@@ -1,3 +1,4 @@
 remnux/jsdetox|-d -p 3000:3000
 hombres/thug-shell|--rm -ti --net host
 hombres/gowapt|--rm -ti
+hombres/cutter|--rm -ti --privileged -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix

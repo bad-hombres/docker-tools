@@ -22,6 +22,7 @@ read -r -d '' SCRIPT <<EOF
 IMAGE_NAME=$1
 OPTS=\${OPTS-"$2"}
 
+xhost +local:root
 LIB_DIR=\$(readlink -f \$(dirname \$0))/../lib
 . \$LIB_DIR/functions.sh
 . \$LIB_DIR/base_script.sh
