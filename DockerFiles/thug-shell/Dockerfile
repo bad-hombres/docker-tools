@@ -14,4 +14,5 @@ WORKDIR /usr/src/thug-shell
 RUN pip install --no-cache-dir docopt
 RUN pip install --no-cache-dir playsound
 
-CMD [ "python", "./thug_shell.py" ]
+COPY entrypoint.sh .
+ENTRYPOINT [ "./entrypoint.sh" ]
