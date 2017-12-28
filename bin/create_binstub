@@ -21,6 +21,7 @@ read -r -d '' SCRIPT <<EOF
 #!/usr/bin/env bash
 IMAGE_NAME=$1
 OPTS=\${OPTS-"$2"}
+EXTRA_OPTS=\${EXTRA_OPTS-""}
 
 xhost +local:root
 LIB_DIR=\$(readlink -f \$(dirname \$0))/../lib
