@@ -20,7 +20,9 @@ to dockerize
 ## Bin stubs
 
 The bin stubs are generated from a temoplate and have the following options
-(ising the example for the gowapt image(. 
+
+Note: in the following examples the gowapt command is a bin stub generated for
+the hombres/gowapt docker image
 
 - Run command
 ```
@@ -46,7 +48,7 @@ $ EXTRA_OPTS="-v /usr/share/wordlists:/tmp/wordlists" gowapt
 The above would mount and additional folder
 - Mount your $HOME dir inside the container
 ```
-$ MOUNT\_HOME\_DIR=true gowapt
+$ MOUNT_HOME_DIR=true gowapt
 ```
 The above command mounts you home dir inside the container (in the same
 location)
