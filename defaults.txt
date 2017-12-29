@@ -3,3 +3,4 @@ hombres/thug-shell|--rm -ti --net host
 hombres/gowapt|--rm -ti
 hombres/cutter|--rm -ti --privileged -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix
 hombres/supertty|--rm -ti --net host
+hombres/john|--rm -ti
