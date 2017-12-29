@@ -42,3 +42,10 @@ stop-image() {
   fi
 
 }
+
+update-image() {
+  local image_name=$1
+
+  echo "[+] Updating $image_name......"
+  sudo docker pull $image_name
+}
