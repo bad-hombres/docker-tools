@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 VOLUME_HOME="/var/lib/mysql"
