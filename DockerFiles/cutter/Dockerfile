@@ -11,6 +11,6 @@ RUN apt-get -y install wget \
   libfuse2
 
 RUN wget https://github.com/radareorg/cutter/releases/download/v1.4/Cutter-v1.4-x86_64.AppImage
-RUN chmod +x Cutter-v1.1-x86_64.AppImage
+RUN chmod +x Cutter-v1.4-x86_64.AppImage
 
 CMD ["./Cutter-v1.4-x86_64.AppImage"]
